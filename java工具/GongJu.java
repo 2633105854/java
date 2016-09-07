@@ -35,6 +35,25 @@ public class GongJu {
 			
 		return string;
 	}
+
+
+    //md5加密
+	public static String Jiami(String s)
+	{
+		 String stmd5="";
+		try {
+			  MessageDigest md5=MessageDigest.getInstance("MD5");
+			  BASE64Encoder ba=new BASE64Encoder();
+			  stmd5=ba.encode( md5.digest(s.getBytes("utf-8")));
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return stmd5;
+		
+	}
     public static void main(String[] args) {
 		System.out.println(new GongJu().change("1,2,", "1"));
 	}
